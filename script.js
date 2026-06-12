@@ -24,8 +24,8 @@ const themes = [
         title: "💐 Mother's Day Wish Generator"
     },
     {
-        key: "new year's",
-        title: "🎆 New Year's sWish Generator"
+        key: "newyear",
+        title: "🎆 New Year's Wish Generator"
     },
     {
         key: "fathers",
@@ -34,11 +34,11 @@ const themes = [
     {
         key: "holidays",
         title: "🎁 Holidays Generator"
-    }
+    },
     {
         key: "easter",
         title: "🐣 Easter Generator"
-    }
+    },
     {
         key: "eid",
         title: "☪️ Eid Generator"
@@ -50,7 +50,7 @@ let currentThemeIndex = 0;
 const birthdayWishes = [
     "Happy Birthday! Wishing you joy, laughter, and success this year.",
     "May your birthday be filled with unforgettable moments and endless smiles.",
-    "Cheers to another year of adventures, happiness, and dreams coming true."
+    "Cheers to another year of adventures, happiness, and dreams coming true.",
     "To the most iconic person in the room—happy birthday! May this year bring you clarity, confidence, and celebrations big and small.",
 "Happy Birthday! May every dream you have move one step closer to becoming reality.",
 "Wishing you a year filled with laughter, unforgettable adventures, and people who truly appreciate you.",
@@ -65,7 +65,7 @@ const birthdayWishes = [
 
 const christmasWishes = [
     "Merry Christmas! May your home be filled with love and warmth.",
-    "Wishing you peace, joy, and magical moments this festive season."
+    "Wishing you peace, joy, and magical moments this festive season.",
      "Merry Christmas! May your heart be wrapped in love, your home be filled with laughter, and your days shine with the magic of the season.",
   "Wishing you a Christmas filled with warm hugs, cherished memories, and the joy of being surrounded by those who mean the most.",
   "May the lights of Christmas brighten your path, the love of family warm your heart, and the hope of the season stay with you all year long.",
@@ -80,7 +80,7 @@ const christmasWishes = [
 
 const mothersDayWishes = [
     "Happy Mother's Day! Thank you for your endless love and strength.",
-    "Today we celebrate the incredible person you are. Happy Mother's Day!"
+    "Today we celebrate the incredible person you are. Happy Mother's Day!",
      "Happy Mother's Day! Thank you for your endless love, gentle strength, and the countless little ways you make life beautiful.",
   "To an amazing mother, your kindness and care have touched so many hearts. Wishing you a day filled with love and appreciation.",
   "Happy Mother's Day! May today remind you how deeply loved, valued, and cherished you truly are.",
@@ -95,7 +95,7 @@ const mothersDayWishes = [
 
 const fathersDayWishes = [
     "Happy Father's Day! Your wisdom and kindness inspire us every day.",
-    "Thank you for your guidance, support, and unwavering love."
+    "Thank you for your guidance, support, and unwavering love.",
       "Happy Father's Day!Thank you for your strength, wisdom, and the quiet love that makes every day brighter.",
   "To an incredible father, thank you for always believing, guiding, and showing what true kindness looks like. Happy Father's Day!",
   "Wishing you a Father's Day filled with appreciation, laughter, and all the happiness you bring to those around you.",
@@ -110,7 +110,7 @@ const fathersDayWishes = [
 
 const eidWishes = [
     "Eid Mubarak! May your heart and home be filled with peace and blessings.",
-    "Wishing you and your family a joyful and prosperous Eid."
+    "Wishing you and your family a joyful and prosperous Eid.",
       "Eid Mubarak! May this blessed day fill your heart with peace, your home with happiness, and your life with endless blessings.",
   "Wishing you and your loved ones a joyful Eid filled with gratitude, laughter, and beautiful moments together.",
   "May Allah's blessings surround you today and always. Eid Mubarak to you and your family!",
@@ -146,7 +146,7 @@ const happyeasterwish = [
   "Happy Easter! May peace surround you, love guide you, and happiness stay with you every step of the way.",
   "Here's wishing you a joyful Easter filled with warmth, gratitude, and the beauty of life's simple blessings."
 ];
-const happynewyear'swish = [
+const happyNewYearWishes = [
       "Happy New Year! May this new chapter bring you happiness, exciting opportunities, and dreams that become reality.",
   "Here's to new beginnings, fresh adventures, and beautiful memories waiting to be made. Happy New Year!",
   "May the year ahead be filled with laughter, love, success, and countless moments that make your heart smile.",
@@ -158,16 +158,20 @@ const happynewyear'swish = [
   "Happy New Year! May each day ahead bring you closer to happiness, peace, and everything you've been wishing for.",
   "A new year means a new story to write. May yours be filled with adventure, love, success, and unforgettable moments."
 ];
-let currentThemeIndex = 0;
 
-function getRandomWish() {
-    const currentTheme = themes[currentThemeIndex];
-    const wishes = currentTheme.wishes;
-
-    return wishes[Math.floor(Math.random() * wishes.length)];
-}
+const wishesByTheme = {
+    birthday: birthdayWishes,
+    christmas: christmasWishes,
+    mothers: mothersDayWishes,
+    newyear: happyNewYearWishes,
+    fathers: fathersDayWishes,
+    holidays: happyholidayswish,
+    easter: happyeasterwish,
+    eid: eidWishes
+};
 
 function randomWish() {
+    const wishes = wishesByTheme[themes[currentThemeIndex].key];
     return wishes[Math.floor(Math.random() * wishes.length)];
 }
 
