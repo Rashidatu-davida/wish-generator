@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Animated background -->
+    <div class="background">
+        <span class="star s1"></span>
+        <span class="star s2"></span>
+        <span class="star s3"></span>
+        <span class="star s4"></span>
+
+        <span class="dot d1"></span>
+        <span class="dot d2"></span>
+        <span class="dot d3"></span>
+        <span class="dot d4"></span>
+    </div>
+
+    <!-- ==========================
+            PAGE 1
+    =========================== -->
+
+    <section id="pageOne" class="screen active">
+
+        <div class="container">
+
+            <div class="badge">
+                ✨ Birthday Generator
+            </div>
+
+            <h1>
+                Create a Personalized
+                <span>Birthday Wish</span>
+            </h1>
+
+            <p class="subtitle">
+                Turn a simple name and photo into a beautiful
+                birthday message in seconds.
+            </p>
+
+            <div class="card">
+
+                <label>ENTER NAME</label>
+
+                <input
+                    type="text"
+                    id="userName"
+                    placeholder="Who's the birthday star? ✨"
+                >
+
+                <label class="upload-title">
+                    UPLOAD PHOTO
+                    <span>(Optional)</span>
+                </label>
+
+                <label class="upload-box">
+                    <input
+                        type="file"
+                        id="photoUpload"
+                        accept="image/*"
+                        hidden
+                    >
+
+                    <div id="uploadPreview">
+                        <div class="upload-icon">
+                            📷
+                        </div>
+
+                        <h3>Tap to upload a photo</h3>
+
+                        <p>or drag and drop here</p>
+
+                        <small>PNG, JPG up to 10MB</small>
+                    </div>
+                </label>
+
+                <button id="generateBtn" disabled>
+                    ✨ Generate Wish
+                </button>
+
+            </div>
+
+            <p class="footer-text">
+                ✨ 100% free • No sign-up required
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+            PAGE 2
+    =========================== -->
+
+    <section id="pageTwo" class="screen">
+
+        <div class="container">
+
+            <!-- Profile circle -->
+            <div class="profile-circle">
+                <img id="resultImage" src="" alt="">
+                <div id="heartIcon">♡</div>
+            </div>
+
+            <p class="wish-label">
+                🎉 WISHING A HAPPY BIRTHDAY TO
+            </p>
+
+            <h2 id="displayName">
+                Enter Name!
+            </h2>
+
+            <!-- Wish card -->
+            <div class="wish-card">
+
+                <div class="wish-header">
+                    🎂 <span>BIRTHDAY MESSAGE</span>
+                </div>
+
+                <p id="wishText">
+                    Loading birthday wish...
+                </p>
+
+                <hr>
+
+                <div class="credit">
+                    ♡ Made with love • Birthday Wish Generator
+                </div>
+
+            </div>
+
+            <!-- Reserved AdSense area -->
+            <div class="ad-space">
+                Sponsored Message
+            </div>
+
+            <!-- Buttons -->
+            <button id="anotherWishBtn" class="primary-btn">
+                ↻ Generate Another Wish
+            </button>
+
+            <button id="shareBtn" class="secondary-btn">
+                ✉ Share Your Wish
+            </button>
+
+            <button id="restartBtn" class="text-btn">
+                ← Start over
+            </button>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
